@@ -1,8 +1,8 @@
 class Opslymd < Formula
   desc "Render Markdown in the terminal, like cat but formatted"
   homepage "https://github.com/iaminci/opslymd-cli"
-  url "https://github.com/iaminci/opslymd-cli/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "7e898720c53b25d9b7fed8c84aed2d3d7899a8a9bcd8408b0dc5179e2038dad6"
+  url "https://github.com/iaminci/opslymd-cli/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "cb1a0d19f0ecb979ed543d2139e4ccb3a76d3b3a2fb405ac8d82953b0bac1d40"
   license "MIT"
   head "https://github.com/iaminci/opslymd-cli.git", branch: "main"
 
@@ -10,7 +10,7 @@ class Opslymd < Formula
 
   def install
     ldflags = "-s -w -X main.version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), "./cmd/opslymd"
+    system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
